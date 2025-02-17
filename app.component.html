@@ -1,0 +1,26 @@
+<div>
+  <form (ngSubmit)="onSubmit()">
+    <p>Username</p>
+    <input class="input-box" type="text" name="username" [(ngModel)]="username" placeholder="Enter your username" required>
+    
+    <p>Email</p>
+    <input class="input-box" type="email" name="email" [(ngModel)]="email" placeholder="Enter your email" required>
+
+    <p>Password</p>
+    <input class="input-box" type="password" name="password" [(ngModel)]="password" placeholder="Enter your password" required>
+
+    <p>Final Message</p>
+    <input class="input-box" type="lastwords" name="lastwords" [(ngModel)]="lastwords" placeholder="Enter your last words" required>
+    <input class="btn" type="submit" value="Submit" [disabled]="!username || !email || !password">
+  </form>
+</div>
+
+<p *ngIf="submitted">
+  You have entered: <br>
+  Username: {{ username }} <br>
+  Email: {{ email }} <br>
+  Password: {{ password }} <br>
+  Last words: {{ lastwords }}
+</p>
+
+<router-outlet />
